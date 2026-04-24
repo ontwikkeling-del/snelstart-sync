@@ -1,0 +1,12 @@
+services:
+  - type: cron
+    name: snelstart-sync
+    runtime: docker
+    region: frankfurt
+    schedule: "*/15 * * * *"
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
